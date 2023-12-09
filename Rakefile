@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
-require 'minitest/test_task'
-
-Minitest::TestTask.create(:test) do |t|
-  t.libs << 'test'
-  t.libs << 'lib'
-  t.warning = false
-  t.test_globs = ['test/**/*_test.rb']
+require 'rake/testtask'
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'lib' << 'test'
+  test.pattern = 'test/**/*_test.rb'
+  test.verbose = true
 end
 
 task default: :test

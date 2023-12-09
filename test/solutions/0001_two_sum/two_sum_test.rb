@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
+require 'test_helper'
 require_relative '../../../lib/solutions/0001_two_sum/two_sum'
 
 class TwoSumTest < Minitest::Test
